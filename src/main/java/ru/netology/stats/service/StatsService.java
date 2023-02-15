@@ -25,8 +25,7 @@ public class StatsService {
 
     }
 
-    public int getSumAllSales(int[] sum) {
-        int myArray[] = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+    public int getSumAllSales(int[] myArray) {
         int sumAllSales = 0;
         for (int i = 0; i < myArray.length; i++) {
             sumAllSales = sumAllSales + myArray[i];
@@ -36,11 +35,10 @@ public class StatsService {
     }
 
     public int getMidSumSalesPerMonth(int[] mid) {
-        int myArray[] = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int[] myArray = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int midSumSales = 0;
-        if (myArray.length > 0) {
-            ;
-        }
+        //if (myArray.length > 0) {
+
         {
             int sum = 0;
             for (int i = 0; i < myArray.length; i++) {
@@ -54,28 +52,30 @@ public class StatsService {
 
     }
 
-    public int getBadMonthSales(int[] bad) {
+    int midSales = 15;
+
+    public int getMonthSalesUnderMid(int[] sales) {
         //int myArray[] = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int badMonthSales = 0;
-        for (int b : bad) {
-            if (b < getMidSumSalesPerMonth(bad)) {
-                badMonthSales += 1;
+        int underMid = 0;
+        for (int sale : sales) {
+            if (sale < midSales) {
+                underMid += 1;
             }
         }
 
-        return badMonthSales;
+        return underMid;
     }
 
-    public int getGoodMonthSales(int[] good) {
+    public int getMonthSalesOverMid(int[] good) {
         //int myArray[] = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int goodMonthSales = 0;
-        for (int g : good) {
-            if (g > getMidSumSalesPerMonth(good)) {
-                goodMonthSales += 1;
+        int overMid = 0;
+        for (int sale : good) {
+            if (sale > midSales) {
+                overMid += 1;
             }
         }
 
-        return goodMonthSales;
+        return overMid;
     }
 }
 

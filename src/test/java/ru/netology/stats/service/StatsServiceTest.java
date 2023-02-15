@@ -36,7 +36,7 @@ public class StatsServiceTest {
     public void shouldFindSumAllSales() {
         StatsService service = new StatsService();
 
-        int myArray[] = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int[] myArray = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 180;
         int actual = service.getSumAllSales(myArray);
@@ -50,7 +50,7 @@ public class StatsServiceTest {
     public void shouldFindMidSumSalesPerMonth() {
         StatsService service = new StatsService();
 
-        int myArray[] = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int[] myArray = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 15;
         int actual = service.getMidSumSalesPerMonth(myArray);
@@ -60,26 +60,26 @@ public class StatsServiceTest {
     }
 
     @Test
-    public void shouldFindBadMonthSales() {
+    public void shouldFindMonthSalesUnderMid() {
         StatsService service = new StatsService();
 
-        int myArray[] = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int[] myArray = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 5;
-        int actual = service.getBadMonthSales(myArray);
+        int actual = service.getMonthSalesUnderMid(myArray);
 
         Assertions.assertEquals(expected, actual);
 
     }
 
     @Test
-    public void shouldFindGoodMonthSales() {
+    public void shouldFindMonthSalesOverMid() {
         StatsService service = new StatsService();
 
-        int myArray[] = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int[] myArray = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 5;
-        int actual = service.getGoodMonthSales(myArray);
+        int actual = service.getMonthSalesOverMid(myArray);
 
         Assertions.assertEquals(expected, actual);
     }
