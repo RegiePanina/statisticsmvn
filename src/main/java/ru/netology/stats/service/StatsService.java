@@ -34,15 +34,13 @@ public class StatsService {
         return sumAllSales;
     }
 
-    public int getMidSumSalesPerMonth(int[] mid) {
-        int[] myArray = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+    public int getMidSumSalesPerMonth(int[] myArray) {
         int midSumSales = 0;
-
-            int sum = 0;
-            for (int i = 0; i < myArray.length; i++) {
-                sum += myArray[i];
-            }
-            midSumSales = sum / myArray.length;
+        int sum = 0;
+        for (int i = 0; i < myArray.length; i++) {
+            sum += myArray[i];
+        }
+        midSumSales = sum / myArray.length;
 
         return midSumSales;
 
