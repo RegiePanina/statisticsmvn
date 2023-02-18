@@ -46,32 +46,35 @@ public class StatsService {
 
     }
 
-    int midSales = 15;
 
     public int getMonthSalesUnderMid(int[] sales) {
-        //int myArray[] = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
         int underMid = 0;
-        for (int sale : sales) {
+        int midSales = getSumAllSales(sales) / sales.length;
+
+        for (int sale : sales)
             if (sale < midSales) {
-                underMid += 1;
-            }
-        }
+             underMid += 1;
+                  }
 
         return underMid;
-    }
+            }
 
     public int getMonthSalesOverMid(int[] good) {
-        //int myArray[] = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int overMid = 0;
-        for (int sale : good) {
-            if (sale > midSales) {
-                overMid += 1;
-            }
-        }
 
-        return overMid;
+        int overMid = 0;
+        int midSales = getSumAllSales(good) / good.length;
+
+
+            for (int sale : good) {
+                if (sale > midSales) {
+                    overMid += 1;
+                }
+            }
+
+            return overMid;
+        }
     }
-}
 
 
 
