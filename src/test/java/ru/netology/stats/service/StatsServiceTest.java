@@ -60,7 +60,6 @@ public class StatsServiceTest {
     }
 
 
-
     @Test
     public void shouldFindMonthSalesUnderMid() {
         StatsService service = new StatsService();

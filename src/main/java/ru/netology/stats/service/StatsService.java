@@ -46,7 +46,6 @@ public class StatsService {
 
     }
 
-
     public int getMonthSalesUnderMid(int[] sales) {
 
         int underMid = 0;
@@ -54,27 +53,26 @@ public class StatsService {
 
         for (int sale : sales)
             if (sale < midSales) {
-             underMid += 1;
-                  }
+                underMid += 1;
+            }
 
         return underMid;
-            }
+    }
 
     public int getMonthSalesOverMid(int[] good) {
 
         int overMid = 0;
         int midSales = getSumAllSales(good) / good.length;
 
-
-            for (int sale : good) {
-                if (sale > midSales) {
-                    overMid += 1;
-                }
+        for (int sale : good) {
+            if (sale > midSales) {
+                overMid += 1;
             }
-
-            return overMid;
         }
+
+        return overMid;
     }
+}
 
 
 
